@@ -5,7 +5,7 @@ copyright 2020 [Mathieu ELIE](http://www.mathieu-elie.net)
 
 # Notes
 
-```python
+```bash
 $ python3.7 -m venv env
 $ source env/bin/activate
 ```
