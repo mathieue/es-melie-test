@@ -12,7 +12,7 @@ def ping():
     return jsonify('pong')
 
 @app.route('/')
-def home(name=None):
+def home():
     return render_template('index.html')
 
 if __name__ == '__main__':
