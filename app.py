@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 from flask_cors import CORS
 from elasticsearch import Elasticsearch
 
@@ -21,6 +21,22 @@ def ping():
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/search', methods=['GET'])
+def search():
+    q = request.args.get('q')
+
+    body = {
+        "query": {
+            "query_string": {
+                "query": q
+            }
+        }
+    }
+
+    results = es.search(body=body)
+    return jsonify(results)
+
 
 if __name__ == '__main__':
     app.run()

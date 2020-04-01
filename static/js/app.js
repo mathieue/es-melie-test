@@ -2,7 +2,7 @@ console.log('hello there !');
 
 
 function doSearch(q) {
-    axios.get('/ping', {
+    axios.get('/search', {
         params: {
             q: q
         }
