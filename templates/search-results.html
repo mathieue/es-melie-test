@@ -1,0 +1,11 @@
+<div>
+    {{ results.hits.total.value }} Results.
+</div>
+
+<div>
+    <ul>
+    {% for hit in results.hits.hits %}
+        <li>{{ hit._source[showField] }}</li>
+    {% endfor %}
+    </ul>
+</div>
